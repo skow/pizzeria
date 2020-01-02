@@ -83,7 +83,7 @@
       /* find the clickable trigger (the element that should react to clicking) */
       const productTitle = document.querySelector(select.menuProduct.clickable);
       /* START: click event listener to trigger */
-      thisProduct.element.addEventListener('click', function(event){
+      productTitle.addEventListener('click', function(event){
         /* prevent default action for event */
         event.preventDefault();
         /* toggle active class on element of thisProduct */
@@ -92,15 +92,15 @@
         /* find all active products */
         const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
         /* START LOOP: for each active product */
-          for(let activeProduct of activeProducts){
+        for(let activeProduct of activeProducts){
           /* START if the active product ins't the element of thisProduct */
-            if(thisProduct.element != activeProduct){
+          if(thisProduct.element != activeProduct){
             /* remove class active for the active product */
-              activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
+            activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
             /* END: if the active product ins't the element of thisProduct */
-            }
-          /* END LOOP: for each active product */
           }
+          /* END LOOP: for each active product */
+        }
       /* END: click event listener to trigger */
       });
     }

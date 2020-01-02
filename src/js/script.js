@@ -81,14 +81,13 @@
       const thisProduct = this;
 
       /* find the clickable trigger (the element that should react to clicking) */
-      const productTitle = document.querySelector(select.menuProduct.clickable);
+      const productTitle = thisProduct.element.querySelector(select.menuProduct.clickable);
       /* START: click event listener to trigger */
       productTitle.addEventListener('click', function(event){
         /* prevent default action for event */
         event.preventDefault();
         /* toggle active class on element of thisProduct */
-        thisProduct.element.classList.add(classNames.menuProduct.wrapperActive);
-        // thisProduct.element.classList.add(classNames.menuProduct.wrapperActive);
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
         /* find all active products */
         const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
         /* START LOOP: for each active product */

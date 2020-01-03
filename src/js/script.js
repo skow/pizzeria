@@ -170,6 +170,25 @@
             price -= option.price;
           /* END ELSE IF: if option is not selected and option is default */
           }
+
+          /* set const imagesOption where search images */
+          const imageName = '.' + paramId + '-' + optionId;
+          const imagesOption = thisProduct.imageWrapper.querySelectorAll(imageName);
+          /* START IF: Where option is selected */
+          if(optionSelected){
+            /* START LOOP */
+            for(let imageOption of imagesOption){
+              /* Add class active to image */
+              imageOption.classList.add(classNames.menuProduct.imageVisible);
+            }
+          }
+          else{
+            /* START LOOP */
+            for(let imageOption of imagesOption){
+              /* Remove class active with image */
+              imageOption.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
         /* END LOOP: for each optionId in param.options */
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
